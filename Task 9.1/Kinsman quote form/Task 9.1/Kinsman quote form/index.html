@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request a Quote</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="Home.html" class="nav-brand">Brand</a>
+            <button class="nav-toggle" id="nav-toggle">
+                <span class="nav-toggle-icon"></span>
+                <span class="nav-toggle-icon"></span>
+                <span class="nav-toggle-icon"></span>
+            </button>
+            <ul class="nav-list" id="nav-list">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+        </div>
+    </nav>
+    <form id="quote-form">
+        <h1 style="text-align:center;">Request a Quote</h1>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required>
+        <label for="project-description">Project Description:</label>
+        <textarea id="project-description" name="project-description" required></textarea>
+        <label for="deadline">Deadline:</label>
+        <input type="date" id="deadline" name="deadline" required>
+        <label for="file">Upload File:</label>
+        <input type="file" id="file" name="file">
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<style>body {
+    font-family: Arial, sans-serif;
+    background: url('ava.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    background-color: #333;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.nav-brand {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle .nav-toggle-icon {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    display: block;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-list li a:hover {
+    text-decoration: underline;
+}
+
+#quote-form {
+    background: rgba(255, 255, 255, 0.5); /* White with 50% opacity */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+#quote-form h1 {
+    margin-bottom: 20px;
+}
+
+#quote-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#quote-form input[type="text"],
+#quote-form input[type="email"],
+#quote-form input[type="tel"],
+#quote-form input[type="date"],
+#quote-form input[type="file"],
+#quote-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#quote-form textarea {
+    height: 100px;
+}
+
+#quote-form button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#quote-form button:hover {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .nav-list li a {
+        padding: 10px;
+        display: block;
+    }
+
+    #quote-form {
+        width: 95%;
+    }
+
+    #quote-form input[type="text"],
+    #quote-form input[type="email"],
+    #quote-form input[type="tel"],
+    #quote-form input[type="date"],
+    #quote-form input[type="file"],
+    #quote-form textarea {
+        width: calc(100% - 10px);
+		.nav-list-visible {
+    display: flex !important;
+}
+
+    }
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const navToggle = document.getElementById('nav-toggle');
+    const navList = document.getElementById('nav-list');
+
+    navToggle.addEventListener('click', function () {
+        navList.classList.toggle('nav-list-visible');
+    });
+});
+</script>
